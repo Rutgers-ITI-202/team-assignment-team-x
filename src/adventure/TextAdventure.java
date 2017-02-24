@@ -5,7 +5,7 @@ package adventure;
 import java.util.Scanner;
 /**
  * 
- * @author Keith
+ * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
  * <h1> Description </h>
@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class TextAdventure {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) 		//Method that runs the main game
 	{
 		Scanner scan = new Scanner(System.in);
 		AdventureModel.roomDescription();
