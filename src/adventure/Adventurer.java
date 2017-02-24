@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 /**
  * 
- * @author Keith
+ * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
  *  <h1> Description <h1>
@@ -16,7 +16,7 @@ public class Adventurer
 	static ArrayList<Things> inven = new ArrayList<Things>();
 	static Scanner scan = new Scanner(System.in);
 	
-	public static void north()//self explainatory
+	public static void north() // Walk north
 	{
 		/**
 		 * @since 1.0
@@ -27,7 +27,7 @@ public class Adventurer
 		AdventureModel.command(); 
 	}
 
-	public static void east()//self explainatory
+	public static void east() //Walk East
 	{
 		/**
 		 * @since 1.0
@@ -38,7 +38,7 @@ public class Adventurer
 		AdventureModel.command(); 
 	}
 
-	public static void south()//self explainatory
+	public static void south() //Walk South
 	{
 		/**
 		 * @since 1.0
@@ -49,7 +49,7 @@ public class Adventurer
 		AdventureModel.command(); 
 	}
 	
-	public static void west() //self explainatory
+	public static void west() //Walk West
 	{
 		/**
 		 * @since 1.0
