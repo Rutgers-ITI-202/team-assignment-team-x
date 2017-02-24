@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 /**
  * 
- * @author Keith
+ * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
  * <h1> This the main logic class of the adventure text Project</h1>
@@ -27,12 +27,12 @@ public class AdventureModel
 	static Adventurer player = new Adventurer();
 	
 	
-		static ArrayList<Things> firstRoomContents=  new ArrayList<Things>();
-		static Things flashlight = new Things("a regular looking flashlight ", "the room lights up","flashlight");
+		static ArrayList<Things> firstRoomContents=  new ArrayList<Things>();	
+		static Things flashlight = new Things("a regular looking flashlight ", "the room lights up","flashlight");			// Instantiated Items
 		static Things desk = new Things("an old oak desk that has clearly been used", "you riffle through the drawers but find nothing of interest","desk");
 		static Things note = new Things("a note on clean new paper it looks like it was just written the ink is still wet in some areas","the note reads: \n Hello John you are probably wondering why your room has been ransacked come down to the kitchen for answers","note");
 		
-		public static void itemAdder()
+		public static void itemAdder()		// Add Items to room
 		{
 			/**
 			 * @since 1.0
@@ -81,7 +81,7 @@ public class AdventureModel
 		  in=in.toLowerCase();
 		  switch(in)//goes through the options
 		  {
-		  	case "look":
+		  	case "look":				// Applies methods based on user input
 		  		look();
 		  		break;
 		  	case "take":
@@ -121,7 +121,7 @@ public class AdventureModel
 		in= scan.nextLine();
 		
 		
-		if(in.equalsIgnoreCase("item"))
+		if(in.equalsIgnoreCase("item"))						//Look method for items and room
 		{
 			System.out.println("which item: ");
 			player.Inventory();
@@ -147,7 +147,7 @@ public class AdventureModel
 		command();
 		
 	}
-	public static void take()
+	public static void take()			// Add items to inventory
 	{
 		/**
 		 * @since 1.0
@@ -171,7 +171,7 @@ public class AdventureModel
     	  }
     	  command();
 	}
-	public static void use()
+	public static void use()				// Use method for items
 	{
 		/**
 		 * @since 1.0
@@ -196,7 +196,7 @@ public class AdventureModel
    	  command();
 	}
 	
-	public static void drop()
+	public static void drop()			// Drop items from inventory
 	{
 		/**
 		 * @since 1.0
