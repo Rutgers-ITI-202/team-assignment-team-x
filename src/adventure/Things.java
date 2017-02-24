@@ -1,22 +1,55 @@
 package adventure;
 
+/**
+ * 
+ * @author Keith
+ * @version 1.0
+ * @since 1.0
+ *  <h1> Description <h1>
+ *  This class creates things and gives them the variable description, whenUser(a description of what happened when used), and a name it also includes a boolean variable that is set to true when used so the program knows if an item is being used or not
+ */
 public class Things 
 { 
 	// we can use these decelerations for things that may effect gameplay
 	
-	static boolean flashlightOn =false;
+	 String description="";
+	 String whenUsed="";
+	 String name="";
+	 boolean used=false;
+	 
+	public Things(String d, String WU, String n)
+	{
+		
+		this.description=d;
+		this.whenUsed=WU;
+		this.name=n;
+	}
 	
-  public static void desk()
-  {
-	  System.out.println("you riffle through the desk but you find nothing of interest");
-  }
-  public static void note()
-  {
-	  System.out.println("PLEASE ADD SOMETHING ABOUT THE PLOT");
-  }
-  public static void flashlight()
-  {
-	  System.out.println("you click the flashlight on and it lights up the room");
-	  flashlightOn=true;
-  }
+	public  void inspect()
+	{
+		/**
+		 * @since 1.0
+		 *  <h1> Description <h1>
+		 * prints out a description of the item when the user looks at an item
+		 */
+		
+		System.out.println(this.description);
+		AdventureModel.command();
+	}
+	public  void use()
+	{
+		/**
+		 * @since 1.0
+		 *  <h1> Description <h1>
+		 *  prints out what happens when you use an item and then sets the item to used 
+		 */
+		
+		System.out.println(this.whenUsed);
+		this.used=true;
+		
+		AdventureModel.command();
+		
+	}
+
+
 }
