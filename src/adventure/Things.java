@@ -2,7 +2,7 @@ package adventure;
 
 /**
  * 
- * @author Keith
+ * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
  *  <h1> Description <h1>
@@ -12,12 +12,12 @@ public class Things
 { 
 	// we can use these decelerations for things that may effect gameplay
 	
-	 String description="";
+	 String description="";				// Defines traits of a Thing
 	 String whenUsed="";
 	 String name="";
 	 boolean used=false;
 	 
-	public Things(String d, String WU, String n)
+	public Things(String d, String WU, String n) // Constructor
 	{
 		
 		this.description=d;
@@ -25,7 +25,7 @@ public class Things
 		this.name=n;
 	}
 	
-	public  void inspect()
+	public  void inspect()		// Prints description of item when inspecting it
 	{
 		/**
 		 * @since 1.0
@@ -36,7 +36,7 @@ public class Things
 		System.out.println(this.description);
 		AdventureModel.command();
 	}
-	public  void use()
+	public  void use()			// Method to print message following use of item
 	{
 		/**
 		 * @since 1.0
