@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 /**
  * 
- * @author Keith
+ * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
  *  <h1> Description <h1>
@@ -12,11 +12,11 @@ import java.util.Scanner;
  */
 public class Rooms 
 {
-	String name;
+	String name;					// define room traits
 	String description;
 	ArrayList<Things> contents = new ArrayList();
 	
-	public Rooms(String n, String d, ArrayList<Things> RoomContents)
+	public Rooms(String n, String d, ArrayList<Things> RoomContents)		// Constructor
 	{
 		name=n;
 		description=d;
