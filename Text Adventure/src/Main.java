@@ -1,5 +1,5 @@
 /**
- * Text adventure Main, for ITI 202: Object-Oriented Programming.
+ * Text adventure game, for ITI 202: Object-Oriented Programming.
  */
 /**
  * @author Spencer Yan
@@ -40,7 +40,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        // Control whether or not the player is currently the game.
+        // Control whether or not the player is currently playing the game.
         boolean active = true;
 
         // Initialise room description, and items: table, and piece of paper.
