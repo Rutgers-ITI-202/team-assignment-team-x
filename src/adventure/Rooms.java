@@ -1,5 +1,5 @@
-package adventure;
-
+//package adventure;
+//make this class extend another class with a inspect or look method that returns a description
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -13,17 +13,23 @@ import java.util.Scanner;
 public class Rooms 
 {
 	String name;					// define room traits
-	String description;
+	String description="";
 	ArrayList<Things> contents = new ArrayList();
 	
-	public Rooms(String n, String d, ArrayList<Things> RoomContents)		// Constructor
+	public Rooms(String n, String d, ArrayList<Things> RoomContents)// Constructor
 	{
 		name=n;
 		description=d;
 		contents=RoomContents;
 	}
 	
-	
-	
+	public ArrayList<Things> getContents()
+	{
+		return this.contents;
+	}
+	public String look()
+	{
+		return description;
+	}
 	
 }

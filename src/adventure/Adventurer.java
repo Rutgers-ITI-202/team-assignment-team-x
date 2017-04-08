@@ -1,4 +1,3 @@
-
 package adventure;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ public class Adventurer
 	static ArrayList<Things> inven = new ArrayList<Things>();
 	static Scanner scan = new Scanner(System.in);
 	
-	public static void north() // Walk north
+	public void north() // Walk north
 	{
 		/**
 		 * @since 1.0
@@ -24,10 +23,10 @@ public class Adventurer
 		 *  moves the player north
 		 */
 		System.out.println("you walk north");
-		AdventureModel.command(); 
+		
 	}
 
-	public static void east() //Walk East
+	public void east() //Walk East
 	{
 		/**
 		 * @since 1.0
@@ -35,10 +34,10 @@ public class Adventurer
 		 *  moves the player east
 		 */
 		System.out.println("you walk east");
-		AdventureModel.command(); 
+		 
 	}
 
-	public static void south() //Walk South
+	public void south() //Walk South
 	{
 		/**
 		 * @since 1.0
@@ -46,10 +45,10 @@ public class Adventurer
 		 *  moves the player south
 		 */
 		System.out.println("you walk south");
-		AdventureModel.command(); 
+		
 	}
 	
-	public static void west() //Walk West
+	public void west() //Walk West
 	{
 		/**
 		 * @since 1.0
@@ -57,7 +56,7 @@ public class Adventurer
 		 *  moves the player west
 		 */
 		System.out.println("you walk west");
-		AdventureModel.command(); 
+		
 	}
 	
 	public void Inventory() //this prints out the content of the players inventory
@@ -71,9 +70,9 @@ public class Adventurer
         {
         	System.out.println(inven.get(x).name);
         }
-        AdventureModel.command(); 
+        
 	}
-	public static void take(Things x) //this adds an item into the inventory
+	public void take(Things x) //this adds an item into the inventory
 	{
 		/**
 		 * @since 1.0
@@ -81,10 +80,10 @@ public class Adventurer
 		 */
 		inven.add(x);
 		System.out.println(x.name+" has been added to your inventory");
-		AdventureModel.command(); 
+		
 	}
 	
-	public static void drop(Things x) //this removes an item from the players inventory
+	public void drop(Things x) //this removes an item from the players inventory
 	{
 		/**
 		 * @since
@@ -102,7 +101,7 @@ public class Adventurer
         }
 		
 		
-		AdventureModel.command(); 
+		
 	}
 
 

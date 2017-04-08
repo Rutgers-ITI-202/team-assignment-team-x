@@ -1,5 +1,5 @@
-package adventure;
-
+//package adventure;
+//make this class extend another class with a inspect or look method that returns a description
 /**
  * 
  * @author Keith, Kevin, Spencer
@@ -24,32 +24,32 @@ public class Things
 		this.whenUsed=WU;
 		this.name=n;
 	}
+	public String look()
+	{
+		return description;
+	}
 	
-	public  void inspect()		// Prints description of item when inspecting it
+	public void setDescription(String in)
 	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 * prints out a description of the item when the user looks at an item
-		 */
-		
-		System.out.println(this.description);
-		AdventureModel.command();
+		this.description=in;
 	}
-	public  void use()			// Method to print message following use of item
+	
+	public String getWhenUsed()
 	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 *  prints out what happens when you use an item and then sets the item to used 
-		 */
-		
-		System.out.println(this.whenUsed);
-		this.used=true;
-		
-		AdventureModel.command();
-		
+		return whenUsed;
 	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setUsed(boolean in)
+	{
+		used=in;
+	}
+	
+	
 
 
 }

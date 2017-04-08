@@ -9,7 +9,7 @@ This class:
 	o	The method that executes commands should return a String to be displayed in the main text area.
 */
 
-package adventure;
+//package adventure;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,51 +23,178 @@ import java.util.Scanner;
  */
 public class AdventureModel
 {
-	static Scanner scan = new Scanner(System.in);
-	static Adventurer player = new Adventurer();
+		static Scanner scan = new Scanner(System.in);
+		static int [][] map= new int [3][3];
 	
 	
-		static ArrayList<Things> firstRoomContents=  new ArrayList<Things>();	
-		static Things flashlight = new Things("a regular looking flashlight ", "the room lights up","flashlight");			// Instantiated Items
-		static Things desk = new Things("an old oak desk that has clearly been used", "you riffle through the drawers but find nothing of interest","desk");
-		static Things note = new Things("a note on clean new paper it looks like it was just written the ink is still wet in some areas","the note reads: \n Hello John you are probably wondering why your room has been ransacked come down to the kitchen for answers","note");
+		static ArrayList<Things> cheeksCageContents = new ArrayList<Things>();
+		static ArrayList<Things> rabbitCageContents = new ArrayList<Things>();
+		static ArrayList<Things> catCageContents = new ArrayList<Things>();
+		static ArrayList<Things> puppyCrateContents = new ArrayList<Things>();
+		static ArrayList<Things> turtleCageContents = new ArrayList<Things>();
+		static ArrayList<Things> mouseCageContents = new ArrayList<Things>();
+		static ArrayList<Things> ratCageContents = new ArrayList<Things>();
+		static ArrayList<Things> guineaPigContents = new ArrayList<Things>();
+		static ArrayList<Things> snakeCageContents = new ArrayList<Things>();
+		static ArrayList<Things> checkoutCounterContents = new ArrayList<Things>();
+		static ArrayList<Things> allThings = new ArrayList<Things>();
 		
-		public static void itemAdder()		// Add Items to room
+		static Things invoice = new Things("a receipt with some info on it","          ","invoice");
+		static Things trainquilizer = new Things("can knock someone out","              ","tranquilizer");
+		static Things toothpick = new Things("pointy, could be used to fight","           ","toothpick");
+		static Things key = new Things("a regular key, could be used to open something up","            ","key");
+		static Things posion= new Things("a small pill that has a skull and crossbones and a rat","           ","posion");
+		static Things treat = new Things("doesn't look appetizing, maybe a dog would like it","          ","treat");
+		static Things boxCutter = new Things("sharp a little unweidly could be used to fight","            ","box cutter");
+		static Things laserPointer = new Things("shines a bright red light wherever it is pointer","           ","laser pointer");
+		static Things plasticBag = new Things("could be used to hold items","          ","a plastic bag");
+		static Things animalFood = new Things("food for common animals","         ","animal food");
+		static Things water = new Things("regular old water in a bottle","              ","water");
+		static Things shinyObject = new Things("a shiny object ooohhhhhh","             ","shiny object");
+		static Things animalDroppings = new Things("gross","","animal droppings");
+		static Things chewedGum = new Things("chewed up gum, sticky","              ","chewed gum");
+		
+		
+		
+		public void itemAdder()		// Add Items to room
 		{
 			/**
 			 * @since 1.0
 			 *  <h1> Description <h1>
-			 * This method adds item to the arraylists that are sent to the room constructor
-			 */
-			firstRoomContents.add(flashlight);
-			firstRoomContents.add(desk);
-			firstRoomContents.add(note);
+			 * This method adds item to the arrayLists that are sent to the room constructor
+			 */			
+			cheeksCageContents.add(laserPointer);
+			cheeksCageContents.add(toothpick);
+			cheeksCageContents.add(invoice);
+			rabbitCageContents.add(plasticBag);
+			catCageContents.add(treat);
+			catCageContents.add(trainquilizer);
+			puppyCrateContents.add(key);
+			turtleCageContents.add(posion);
+			turtleCageContents.add(trainquilizer);
+			mouseCageContents.add(treat);
+			ratCageContents.add(boxCutter);	
+			guineaPigContents.add(plasticBag);
+			snakeCageContents.add(toothpick);
+			
+			allThings.add(invoice);
+			allThings.add(trainquilizer);
+			allThings.add(toothpick);
+			allThings.add(key);
+			allThings.add(posion);
+			allThings.add(treat);
+			allThings.add(boxCutter);
+			allThings.add(laserPointer);
+			allThings.add(plasticBag);
+			allThings.add(animalFood);
+			allThings.add(water);
+			allThings.add(shinyObject);
+			allThings.add(animalDroppings);
+			allThings.add(chewedGum);
 		}
 		
-		static Rooms startRoom = new Rooms("bedroom", "You wake up in your bedroom. It is usually dark, and your lights are flickering."
-				+ " It looks as though someone has ransacked your bedroom. "
-				+ "You look for your phone, but along with the rest of your things, it is missing. The only thing you see is a flashlight on your desk. "
-				+ "On top of your nightstand there is a note…", firstRoomContents);
-	
-	
-	//this creates the first room
-	
-	static int currentRoom=1;// sets the current room the first room is room number one used in roomDescription to print the correct description of the current room
-	
-	public static void roomDescription()//prints out a description of the room
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 * this will print out the description for the room that you are in and uses the currentRoom variable to keep track
-		 */
+		//give rooms numbers 
+		//create map of rooms
+		static Rooms cheeksCage = new Rooms("Cheek's Cage", "a regular hamster cage", cheeksCageContents);
+		static Rooms rabbitCage = new Rooms("Rabbit Cage", "a large cage with a rabbit in it",rabbitCageContents);
+		static Rooms catCage = new Rooms("Cat's cage","a large crate with a cat in it", catCageContents);
+		static Rooms puppyCrate = new Rooms("Puppy's Crate","a large crate with a small puppy in it", puppyCrateContents);
+		static Rooms turtleCage = new Rooms("Turtle's Cage", "a small cage with a little pond and a turtle", turtleCageContents);
+		static Rooms mouseCage = new Rooms ("Mouse's Cage", "a small cage with some mice in it",mouseCageContents);
+		static Rooms ratCage = new Rooms ("Rat's cage","a small cage with some large rats in it", ratCageContents);
+		static Rooms guineaPig = new Rooms ("Guinea Pig's cage","a cage with a large guinea pig in it", guineaPigContents);
+		static Rooms snakeCage = new Rooms("Snake's cage","a cage with a large snake in it", snakeCageContents);
+		static Rooms checkoutCounter = new Rooms("Checkout Counter", "a regular old checkout counter",checkoutCounterContents);
 		
-		if(currentRoom==1)
+		
+		static Adventurer cheeks= new Adventurer();
+		
+	
+	
+	static public void movement(String direction)
 		{
-			System.out.println(startRoom.description);
+			if(direction.equalsIgnoreCase("start"))
+			{
+				for(int x=0; x<map.length;x++ )
+				{
+					for(int y=0; y<map[0].length; y++)
+					{
+						if(x==0 && y==0)
+						{
+							map[x][y]=0;
+						}
+						else
+						{
+							map[x][y]=1;
+						}
+					}
+				}
+			}
+			
+			if(direction.equalsIgnoreCase("north"))
+			{
+				for(int x=0; x<map.length;x++ )
+				{
+					for(int y=0; y<map[0].length; y++)
+					{
+						if(map[x][y]==0 && x !=0)
+						{
+							map[x][y]=1;
+							map[x+1][y]=0;
+						}
+					}
+				}
+			}
+			
+			if(direction.equalsIgnoreCase("east"))
+			{
+				for(int x=0; x<map.length;x++ )
+				{
+					for(int y=0; y<map[0].length; y++)
+					{
+						if(map[x][y]==0 && y !=map[0].length)
+						{
+							map[x][y]=1;
+							map[x][y+1]=0;
+						}
+					}
+				}
+			}
+			
+			if(direction.equalsIgnoreCase("west"))
+			{
+				for(int x=0; x<map.length;x++ )
+				{
+					for(int y=0; y<map[0].length; y++)
+					{
+						if(map[x][y]==0 && y != 0)
+						{
+							map[x][y]=1;
+							map[x][y-1]=0;
+						}
+					}
+				}
+			}
+			
+			if(direction.equalsIgnoreCase("south"))
+			{
+				for(int x=0; x<map.length;x++ )
+				{
+					for(int y=0; y<map[0].length; y++)
+					{
+						if(map[x+1][y]==0 && y !=map.length)
+						{
+							map[x][y]=1;
+							map[x-1][y]=0;
+						}
+					}
+				}
+			}
 		}
-	}
-	public static void command() //asks the player for input
+	
+
+	
+	public void command() //asks the player for input
 	{
 		/**
 		 * @since 1.0
@@ -76,153 +203,129 @@ public class AdventureModel
 		 * this method asks the user what they would like to do and then using a switch statement sends calls the correct method
 		 */
 		String in="";
-         System.out.println("what would you like to do: look, take, use, or drop or go in a cardinal direction"); 
-		  in = scan.nextLine();
+         System.out.println("what would you like to do: inspect an item, take an item, use an item , or drop an item or go in a cardinal direction"); 
+		  in = takeString();
 		  in=in.toLowerCase();
 		  switch(in)//goes through the options
 		  {
-		  	case "look":				// Applies methods based on user input
-		  		look();
+		  	case "look":
+		  		System.out.println("at what \ntype room to look at the room that you are in");
+		  		in=takeString();
+		  		//use look method here
 		  		break;
 		  	case "take":
-		  		take();
+		  		System.out.println("take what");
+		  		in=takeString();
+		  		cheeks.take(itemLookup(in));
 		  		break;
 		  	case "use":
-		  		use();
+		  		System.out.println("what item");
+		  		in=takeString();
+		  		use(itemLookup(in));
 		  		break;
 		  	case "drop":
-		  		drop();
+		  		System.out.println("drop what");
+		  		in=takeString();
+		  		cheeks.drop(itemLookup(in));
 		  		break;
 		  	case "go south":
-		  		player.south();
+		  		movement("south");
 		  		break;
 		  	case "go north":
-		  		player.north();
+		  		movement("north");
 		  		break;
 		  	case "go east":
-		  		player.east();
+		  		movement("east");
 		  		break;
 		  	case "go west":
-		  		player.west();
+		  		movement("west");
 		  		break;
 		  }
 	  
 	}
-	public static void look()// looks at an item or a room depending on the players choice
-	{
-		/**\
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 * this method calls the methods and variables that describe items or rooms to users
-		 * 
-		 */
-		String in="";
-		System.out.println("what would you like to look at an item or the room");
-		in= scan.nextLine();
-		
-		
-		if(in.equalsIgnoreCase("item"))						//Look method for items and room
-		{
-			System.out.println("which item: ");
-			player.Inventory();
-			in=scan.nextLine();
-			 if(in.equalsIgnoreCase("flashlight"))
-    		 {
-    		  System.out.println(flashlight.description);
-    		 }
-    	  if(in.equalsIgnoreCase("desk"))
-    	  {
-    		  System.out.println(desk.description);
-    	  }
-    	  if(in.equalsIgnoreCase("note"))
-    	  {
-    		  System.out.println(note.description);
-    	  }
-			
-		}
-		if(in.equalsIgnoreCase("room"))
-		{
-			roomDescription();
-		}
-		command();
-		
-	}
-	public static void take()			// Add items to inventory
+	
+	
+	
+	
+
+	
+	
+	static private int takeNumber()
 	{
 		/**
 		 * @since 1.0
-		 *  <h1> Description <h1>
-		 * this method asks the user what item they want to pick up and then calls the take method in the player class to add the item to the players inventory
+		 * @return returns the number that the user inputs
+		 * <h1> description <h1>
+		 * This method attempts to take in a number from the user if there is a problem with the input the error is caught and the user is asked to input again
 		 */
-		String in="";
-		  System.out.println("which item");
-    	  in=scan.nextLine();
-    	  if(in.equalsIgnoreCase("flashlight"))
-    		 {
-    		  player.take(flashlight);
-    		 }
-    	  if(in.equalsIgnoreCase("desk"))
-    	  {
-    		  System.out.println("this item cannot be picked up");
-    	  }
-    	  if(in.equalsIgnoreCase("note"))
-    	  {
-    		  player.take(note);
-    	  }
-    	  command();
-	}
-	public static void use()				// Use method for items
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 * this method calls the use methods from the Things class to tell the user what using an object does
-		 */
-	  String in="";
-	  System.out.println("which item");
-	  in=scan.nextLine();
-	  if(in.equalsIgnoreCase("flashlight"))
-   		 {
-   		  flashlight.use();
-   		 }
-   	  if(in.equalsIgnoreCase("desk"))
-   	  {
-   		  desk.use();
-   	  }
-   	  if(in.equalsIgnoreCase("note"))
-   	  {
-   		  note.use();
-   	  }
-   	  command();
+		int in;
+		while(true)
+		{
+			try
+			{
+				in=scan.nextInt();
+			}
+			catch(Exception e)
+			{
+				scan.next();
+				System.out.println("bad input try again");
+				continue;
+			}
+			return in;
+		}
+		
+	
 	}
 	
-	public static void drop()			// Drop items from inventory
+	static private String takeString()
 	{
 		/**
-		 * @since 1.0
-		 * <h1> Description </h1>
-		 * This method asks which item the user would like to drop and then uses that input to send the correct item to the adventurer drop method so it can be removed from the inventory array
+		 * @since
+		 * <h1> description <h1>
+		 * this method attempts to take in a string from the user if there is something wrong with the input the user is asked again
 		 */
-		String in="";
-		System.out.println("which item");
-  	  in=scan.nextLine();
-  	  if(in.equalsIgnoreCase("flashlight"))
-  	   {
-  		  player.drop(flashlight);
-  	   }
-  	  if(in.equalsIgnoreCase("note"))
-  	  {
-  		  player.drop(note);
-  	  }
-  	  command();
+		scan.nextLine();
+		String in;
+		while(true)
+		{
+			try
+			{
+				in=scan.nextLine();
+			}
+			catch(Exception e)
+			{
+				scan.next();
+				System.out.println("bad input try again");
+				continue;
+			}
+			return in;
+		}
+		
 	}
 	 
-		  
-	      
-	
-	
-	
-	 
-	
-	
+	static private Things itemLookup(String in)
+	{
+		for(int x=0; x<allThings.size(); x++)
+		{
+			if(allThings.get(x).getName()==in)
+			{
+				return allThings.get(x);
+			}
+		}
+		return null;
+		
+	}
+	static private Rooms roomLookup()
+	{
+		for(int x=0; x<map.length; x++)
+		{
+			for(int y=0; y<map[0].length; y++)
+			{
+				if(map[x][y]==0)
+				{
+					//use if statements to check what room and return that room
+				}
+			}
+		}
+	}
 }

@@ -1,5 +1,4 @@
 
-
 package adventure;
 
 import java.util.Scanner;
@@ -16,15 +15,10 @@ public class TextAdventure {
 
 	public static void main(String[] args) 		//Method that runs the main game
 	{
-		Scanner scan = new Scanner(System.in);
-		AdventureModel.roomDescription();
-		String in="";
-		System.out.println("would you like to play the game");
-		in=scan.nextLine();
-		if(in.equalsIgnoreCase("yes"))
-		{
-			AdventureModel.command();
-		}
+		AdventureModel runner = new AdventureModel();
+		
+		runner.roomDescription(1);
+		
 		
 		
 		
