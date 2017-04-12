@@ -1,4 +1,4 @@
-//package adventure;
+package adventure;
 //make this class extend another class with a inspect or look method that returns a description
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,26 +10,23 @@ import java.util.Scanner;
  *  <h1> Description <h1>
  *  this class creates rooms and gives them the variable name, description and an arrayList of things called contents
  */
-public class Rooms 
+public class Rooms extends AdventureObject
 {
-	String name;					// define room traits
-	String description="";
+	// define room traits
+	
 	ArrayList<Things> contents = new ArrayList();
 	
-	public Rooms(String n, String d, ArrayList<Things> RoomContents)// Constructor
+	public Rooms(String n, String d)// Constructor
 	{
 		name=n;
 		description=d;
-		contents=RoomContents;
+		
 	}
 	
 	public ArrayList<Things> getContents()
 	{
 		return this.contents;
 	}
-	public String look()
-	{
-		return description;
-	}
+	
 	
 }

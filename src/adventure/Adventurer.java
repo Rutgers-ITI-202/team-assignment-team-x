@@ -14,50 +14,7 @@ public class Adventurer
 {
 	static ArrayList<Things> inven = new ArrayList<Things>();
 	static Scanner scan = new Scanner(System.in);
-	
-	public void north() // Walk north
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 *  moves the player north
-		 */
-		System.out.println("you walk north");
-		
-	}
 
-	public void east() //Walk East
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 *  moves the player east
-		 */
-		System.out.println("you walk east");
-		 
-	}
-
-	public void south() //Walk South
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 *  moves the player south
-		 */
-		System.out.println("you walk south");
-		
-	}
-	
-	public void west() //Walk West
-	{
-		/**
-		 * @since 1.0
-		 *  <h1> Description <h1>
-		 *  moves the player west
-		 */
-		System.out.println("you walk west");
-		
-	}
 	
 	public void Inventory() //this prints out the content of the players inventory
 	{
@@ -68,7 +25,7 @@ public class Adventurer
 		 */
         for(int x=0; x<inven.size();x++)
         {
-        	System.out.println(inven.get(x).name);
+        	System.out.println(inven.get(x).getName());
         }
         
 	}
@@ -79,7 +36,7 @@ public class Adventurer
 		 * @param this method is sent a thing object so it can be added to the inventory arrayList
 		 */
 		inven.add(x);
-		System.out.println(x.name+" has been added to your inventory");
+		System.out.println("the "+x.getName()+" has been added to your inventory");
 		
 	}
 	
@@ -92,9 +49,10 @@ public class Adventurer
 		String currentName="";
 		for(int i=0; i<inven.size();i++)
         {
-        	currentName=inven.get(i).name;
-        	if(currentName.equals(x.name))
+        	currentName=inven.get(i).getName();
+        	if(currentName.equals(x.getName()))
         	{
+        		System.out.println(x.getName()+" has been removed from your inventory");
         		inven.remove(i);
         		break;
         	}

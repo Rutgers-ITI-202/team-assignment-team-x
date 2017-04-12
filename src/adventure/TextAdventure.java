@@ -12,16 +12,15 @@ import java.util.Scanner;
  *
  */
 public class TextAdventure {
-
+	
 	public static void main(String[] args) 		//Method that runs the main game
 	{
-		AdventureModel runner = new AdventureModel();
-		
-		runner.roomDescription(1);
 		
 		
-		
-		
+		 AdventureModel runner=new AdventureModel();
+		runner.itemAdd();
+		runner.command();
 	}
+	
 
 }

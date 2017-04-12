@@ -9,7 +9,7 @@ This class:
 	o	The method that executes commands should return a String to be displayed in the main text area.
 */
 
-//package adventure;
+package adventure;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,20 +24,14 @@ import java.util.Scanner;
 public class AdventureModel
 {
 		static Scanner scan = new Scanner(System.in);
-		static int [][] map= new int [3][3];
+		public static int [][] map= new int [3][3];
 	
+		public int [][] getMap()
+		{
+			return map;
+		}
 	
-		static ArrayList<Things> cheeksCageContents = new ArrayList<Things>();
-		static ArrayList<Things> rabbitCageContents = new ArrayList<Things>();
-		static ArrayList<Things> catCageContents = new ArrayList<Things>();
-		static ArrayList<Things> puppyCrateContents = new ArrayList<Things>();
-		static ArrayList<Things> turtleCageContents = new ArrayList<Things>();
-		static ArrayList<Things> mouseCageContents = new ArrayList<Things>();
-		static ArrayList<Things> ratCageContents = new ArrayList<Things>();
-		static ArrayList<Things> guineaPigContents = new ArrayList<Things>();
-		static ArrayList<Things> snakeCageContents = new ArrayList<Things>();
-		static ArrayList<Things> checkoutCounterContents = new ArrayList<Things>();
-		static ArrayList<Things> allThings = new ArrayList<Things>();
+		
 		
 		static Things invoice = new Things("a receipt with some info on it","          ","invoice");
 		static Things trainquilizer = new Things("can knock someone out","              ","tranquilizer");
@@ -55,63 +49,55 @@ public class AdventureModel
 		static Things chewedGum = new Things("chewed up gum, sticky","              ","chewed gum");
 		
 		
+		static ArrayList<Things> allThings = new ArrayList <Things>();
+		//give rooms numbers 
+		//create map of rooms
+		static Rooms cheeksCage = new Rooms("Cheek's Cage", "a regular hamster cage");
+		static Rooms rabbitCage = new Rooms("Rabbit Cage", "a large cage with a rabbit in it");
+		static Rooms catCage = new Rooms("Cat's cage","a large crate with a cat in it");
+		static Rooms puppyCrate = new Rooms("Puppy's Crate","a large crate with a small puppy in it");
+		static Rooms turtleCage = new Rooms("Turtle's Cage", "a small cage with a little pond and a turtle");
+		static Rooms mouseCage = new Rooms ("Mouse's Cage", "a small cage with some mice in it");
+		static Rooms ratCage = new Rooms ("Rat's cage","a small cage with some large rats in it");
+		static Rooms guineaPigCage = new Rooms ("Guinea Pig's cage","a cage with a large guinea pig in it");
+		static Rooms snakeCage = new Rooms("Snake's cage","a cage with a large snake in it");
+		static Rooms checkoutCounter = new Rooms("Checkout Counter", "a regular old checkout counter");
 		
-		public void itemAdder()		// Add Items to room
+		static Adventurer cheeks= new Adventurer();
+	
+		public void itemAdd()
 		{
-			/**
-			 * @since 1.0
-			 *  <h1> Description <h1>
-			 * This method adds item to the arrayLists that are sent to the room constructor
-			 */			
-			cheeksCageContents.add(laserPointer);
-			cheeksCageContents.add(toothpick);
-			cheeksCageContents.add(invoice);
-			rabbitCageContents.add(plasticBag);
-			catCageContents.add(treat);
-			catCageContents.add(trainquilizer);
-			puppyCrateContents.add(key);
-			turtleCageContents.add(posion);
-			turtleCageContents.add(trainquilizer);
-			mouseCageContents.add(treat);
-			ratCageContents.add(boxCutter);	
-			guineaPigContents.add(plasticBag);
-			snakeCageContents.add(toothpick);
+			cheeksCage.getContents().add(laserPointer);
+			cheeksCage.getContents().add(invoice);
+			cheeksCage.getContents().add(toothpick);
+			rabbitCage.getContents().add(plasticBag);
+			catCage.getContents().add(trainquilizer);
+			catCage.getContents().add(treat);
+			puppyCrate.getContents().add(key);
+			turtleCage.getContents().add(posion);
+			turtleCage.getContents().add(trainquilizer);
+			mouseCage.getContents().add(treat);
+			ratCage.getContents().add(boxCutter);
+			guineaPigCage.getContents().add(plasticBag);
+			snakeCage.getContents().add(toothpick);
 			
+			allThings.add(laserPointer);
 			allThings.add(invoice);
-			allThings.add(trainquilizer);
 			allThings.add(toothpick);
+			allThings.add(plasticBag);
+			allThings.add(trainquilizer);
+			allThings.add(treat);
 			allThings.add(key);
 			allThings.add(posion);
-			allThings.add(treat);
 			allThings.add(boxCutter);
-			allThings.add(laserPointer);
-			allThings.add(plasticBag);
-			allThings.add(animalFood);
 			allThings.add(water);
 			allThings.add(shinyObject);
 			allThings.add(animalDroppings);
 			allThings.add(chewedGum);
+			allThings.add(animalFood);
 		}
-		
-		//give rooms numbers 
-		//create map of rooms
-		static Rooms cheeksCage = new Rooms("Cheek's Cage", "a regular hamster cage", cheeksCageContents);
-		static Rooms rabbitCage = new Rooms("Rabbit Cage", "a large cage with a rabbit in it",rabbitCageContents);
-		static Rooms catCage = new Rooms("Cat's cage","a large crate with a cat in it", catCageContents);
-		static Rooms puppyCrate = new Rooms("Puppy's Crate","a large crate with a small puppy in it", puppyCrateContents);
-		static Rooms turtleCage = new Rooms("Turtle's Cage", "a small cage with a little pond and a turtle", turtleCageContents);
-		static Rooms mouseCage = new Rooms ("Mouse's Cage", "a small cage with some mice in it",mouseCageContents);
-		static Rooms ratCage = new Rooms ("Rat's cage","a small cage with some large rats in it", ratCageContents);
-		static Rooms guineaPig = new Rooms ("Guinea Pig's cage","a cage with a large guinea pig in it", guineaPigContents);
-		static Rooms snakeCage = new Rooms("Snake's cage","a cage with a large snake in it", snakeCageContents);
-		static Rooms checkoutCounter = new Rooms("Checkout Counter", "a regular old checkout counter",checkoutCounterContents);
-		
-		
-		static Adventurer cheeks= new Adventurer();
-		
 	
-	
-	static public void movement(String direction)
+	static public boolean movement(String direction)
 		{
 			if(direction.equalsIgnoreCase("start"))
 			{
@@ -129,67 +115,81 @@ public class AdventureModel
 						}
 					}
 				}
+				return false;
 			}
 			
 			if(direction.equalsIgnoreCase("north"))
 			{
-				for(int x=0; x<map.length;x++ )
+				for(int x=0; x<3;x++ )
 				{
-					for(int y=0; y<map[0].length; y++)
+					for(int y=0; y<3; y++)
 					{
-						if(map[x][y]==0 && x !=0)
+						if(map[x][y]==0 && x-1 != -1)
 						{
+							
 							map[x][y]=1;
-							map[x+1][y]=0;
+							map[x-1][y]=0;
+							return true;
 						}
 					}
 				}
+				return false;
 			}
 			
 			if(direction.equalsIgnoreCase("east"))
 			{
-				for(int x=0; x<map.length;x++ )
+				for(int x=0; x<3;x++ )
 				{
-					for(int y=0; y<map[0].length; y++)
+					for(int y=0; y<3; y++)
 					{
-						if(map[x][y]==0 && y !=map[0].length)
+						if(map[x][y]==0 && y+1 != 3)
 						{
+							
 							map[x][y]=1;
 							map[x][y+1]=0;
+							return true;
 						}
 					}
 				}
+				return false;
 			}
 			
 			if(direction.equalsIgnoreCase("west"))
 			{
-				for(int x=0; x<map.length;x++ )
+				for(int x=0; x<3;x++ )
 				{
-					for(int y=0; y<map[0].length; y++)
+					for(int y=0; y<3; y++)
 					{
 						if(map[x][y]==0 && y != 0)
 						{
+							
 							map[x][y]=1;
 							map[x][y-1]=0;
+							return true;
 						}
 					}
 				}
+				return false;
 			}
 			
 			if(direction.equalsIgnoreCase("south"))
 			{
-				for(int x=0; x<map.length;x++ )
+				
+				for(int x=0; x<3;x++ )
 				{
-					for(int y=0; y<map[0].length; y++)
+					for(int y=0; y<3; y++)
 					{
-						if(map[x+1][y]==0 && y !=map.length)
+						if(map[x][y]==0 && x+1 !=3)
 						{
 							map[x][y]=1;
-							map[x-1][y]=0;
+							map[x+1][y]=0;
+							return true;
 						}
 					}
 				}
+				return false;
 			}
+			return false;
 		}
 	
 
@@ -202,16 +202,25 @@ public class AdventureModel
 		 * this is the main command method for the program
 		 * this method asks the user what they would like to do and then using a switch statement sends calls the correct method
 		 */
-		String in="";
-         System.out.println("what would you like to do: inspect an item, take an item, use an item , or drop an item or go in a cardinal direction"); 
+		  String in="";
+          System.out.println("what would you like to do: inspect an item, take an item, use an item , drop an item, look around,  or go in a cardinal direction"); 
 		  in = takeString();
 		  in=in.toLowerCase();
+		  while(checkInput(in)==false)
+		  {
+				 System.out.println("bad input\nplease type in one of the follow \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\" ");
+				 in=takeString();
+		  }
+		  
 		  switch(in)//goes through the options
 		  {
-		  	case "look":
-		  		System.out.println("at what \ntype room to look at the room that you are in");
+		  	case "look around":
+		  		System.out.println(roomLookup().inspect());
+		  		break;
+		  	case "inspect":
+		  		System.out.println("which item");
 		  		in=takeString();
-		  		//use look method here
+		  		itemLookup(in).inspect();
 		  		break;
 		  	case "take":
 		  		System.out.println("take what");
@@ -221,7 +230,7 @@ public class AdventureModel
 		  	case "use":
 		  		System.out.println("what item");
 		  		in=takeString();
-		  		use(itemLookup(in));
+		  		itemLookup(in).whenUsed();
 		  		break;
 		  	case "drop":
 		  		System.out.println("drop what");
@@ -245,37 +254,39 @@ public class AdventureModel
 	}
 	
 	
+	static private boolean checkInput(String in)
+	{
+		
+		switch(in)
+		{
+		case "inspect":
+			return true;
+		case "use":
+			return true;
+		case "drop":
+			return true;
+		case "take":
+			return true;
+		case "go north":
+			return true;
+		case "go east":
+			return true;
+		case "go south":
+			return true;
+		case "go west":
+			return true;
+		case "look around":
+			return true;
+		}
+		return false;
+
 	
+	}
 	
 
 	
 	
-	static private int takeNumber()
-	{
-		/**
-		 * @since 1.0
-		 * @return returns the number that the user inputs
-		 * <h1> description <h1>
-		 * This method attempts to take in a number from the user if there is a problem with the input the error is caught and the user is asked to input again
-		 */
-		int in;
-		while(true)
-		{
-			try
-			{
-				in=scan.nextInt();
-			}
-			catch(Exception e)
-			{
-				scan.next();
-				System.out.println("bad input try again");
-				continue;
-			}
-			return in;
-		}
-		
-	
-	}
+
 	
 	static private String takeString()
 	{
@@ -284,7 +295,6 @@ public class AdventureModel
 		 * <h1> description <h1>
 		 * this method attempts to take in a string from the user if there is something wrong with the input the user is asked again
 		 */
-		scan.nextLine();
 		String in;
 		while(true)
 		{
@@ -302,12 +312,14 @@ public class AdventureModel
 		}
 		
 	}
-	 
+	
+	
+	
 	static private Things itemLookup(String in)
 	{
 		for(int x=0; x<allThings.size(); x++)
 		{
-			if(allThings.get(x).getName()==in)
+			if(in.equals(allThings.get(x).getName()))
 			{
 				return allThings.get(x);
 			}
@@ -315,17 +327,59 @@ public class AdventureModel
 		return null;
 		
 	}
+	
+	
+	
+	
 	static private Rooms roomLookup()
 	{
+		
 		for(int x=0; x<map.length; x++)
 		{
 			for(int y=0; y<map[0].length; y++)
 			{
 				if(map[x][y]==0)
 				{
-					//use if statements to check what room and return that room
+					if(x==0 && y==0)
+					{
+						
+						return cheeksCage;
+					}
+					if(x==0 && y==1)
+					{
+						return rabbitCage;
+					}
+					if(x==0 && y==2)
+					{
+						return catCage;
+					}
+					if(x==1 && y==0)
+					{
+						return puppyCrate;
+					}
+					if(x==1 && y==1)
+					{
+						return turtleCage;
+					}
+					if(x==1 && y==2)
+					{
+						return mouseCage;
+					}
+					if(x==2 && y==0)
+					{
+						return ratCage;
+					}
+					if(x==2 && y==1)
+					{
+						return guineaPigCage;
+					}
+					if(x==2 && y==2)
+					{
+						return snakeCage;
+					}
 				}
 			}
 		}
+		return null;
 	}
 }
