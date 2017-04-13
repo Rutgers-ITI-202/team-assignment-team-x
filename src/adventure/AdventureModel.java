@@ -33,35 +33,36 @@ public class AdventureModel
 	
 		
 		
-		static Things invoice = new Things("a receipt with some info on it","          ","invoice");
-		static Things trainquilizer = new Things("can knock someone out","              ","tranquilizer");
-		static Things toothpick = new Things("pointy, could be used to fight","           ","toothpick");
-		static Things key = new Things("a regular key, could be used to open something up","            ","key");
-		static Things posion= new Things("a small pill that has a skull and crossbones and a rat","           ","posion");
-		static Things treat = new Things("doesn't look appetizing, maybe a dog would like it","          ","treat");
-		static Things boxCutter = new Things("sharp a little unweidly could be used to fight","            ","box cutter");
-		static Things laserPointer = new Things("shines a bright red light wherever it is pointer","           ","laser pointer");
-		static Things plasticBag = new Things("could be used to hold items","          ","a plastic bag");
+		static Things invoice = new Things("a receipt with some info on it","The invoice details a food with cocaine in it and you are interested just then the door opens","invoice");
+		static Things trainquilizer = new Things("can knock someone out","you trick the mice into thinking the tranquilizer is vicodin and the greedly eat it up and pass out and you escape to the top of the cage","tranquilizer");
+		static Things toothpick = new Things("pointy, could be used to fight","You jam the toothpick through the rabbits eye and quickly climb the side of the cage and out","toothpick");
+		static Things key = new Things("a regular key, could be used to open something up","You open up the cage and quickly jump out and the snake follows","key");
+		static Things posion= new Things("a small pill that has a skull and crossbones and a rat","You tell the mice that the posion is actually LSD and put it in their water tank they quickly drink it and die. You climb to the top of the cage","posion");
+		static Things boxCutter = new Things("sharp a little unweidly could be used to fight","you slice the guinea pigs throat and you climb to the top of the cage","box cutter");
+		static Things laserPointer = new Things("shines a bright red light wherever it is pointer","you click the laser on and shine it all around and it distracts the animal just long enough for you to climb the side of the cage","laser pointer");
+		static Things plasticBag = new Things("could be used to hold items","you tie the plastic bag around the turtles head and as it is gasping for breath you make your escape","a plastic bag");
+		
 		static Things animalFood = new Things("food for common animals","         ","animal food");
 		static Things water = new Things("regular old water in a bottle","              ","water");
 		static Things shinyObject = new Things("a shiny object ooohhhhhh","             ","shiny object");
 		static Things animalDroppings = new Things("gross","","animal droppings");
 		static Things chewedGum = new Things("chewed up gum, sticky","              ","chewed gum");
+		static Things treat = new Things("doesn't look appetizing, maybe a dog would like it","          ","treat");
 		
 		
 		static ArrayList<Things> allThings = new ArrayList <Things>();
 		//give rooms numbers 
 		//create map of rooms
-		static Rooms cheeksCage = new Rooms("Cheek's Cage", "a regular hamster cage");
-		static Rooms rabbitCage = new Rooms("Rabbit Cage", "a large cage with a rabbit in it");
-		static Rooms catCage = new Rooms("Cat's cage","a large crate with a cat in it");
-		static Rooms puppyCrate = new Rooms("Puppy's Crate","a large crate with a small puppy in it");
-		static Rooms turtleCage = new Rooms("Turtle's Cage", "a small cage with a little pond and a turtle");
-		static Rooms mouseCage = new Rooms ("Mouse's Cage", "a small cage with some mice in it");
-		static Rooms ratCage = new Rooms ("Rat's cage","a small cage with some large rats in it");
-		static Rooms guineaPigCage = new Rooms ("Guinea Pig's cage","a cage with a large guinea pig in it");
-		static Rooms snakeCage = new Rooms("Snake's cage","a cage with a large snake in it");
-		static Rooms checkoutCounter = new Rooms("Checkout Counter", "a regular old checkout counter");
+		static Rooms cheeksCage = new Rooms("Cheek's Cage", "a regular hamster cage","invoice");
+		static Rooms rabbitCage = new Rooms("Rabbit Cage", "a large cage with a rabbit in it","toothpick");
+		static Rooms catCage = new Rooms("Cat's cage","a large crate with a cat in it","laser pointer");
+		static Rooms puppyCrate = new Rooms("Puppy's Crate","a large crate with a small puppy in it","laser pointer");
+		static Rooms turtleCage = new Rooms("Turtle's Cage", "a small cage with a little pond and a turtle", "plastic bag");
+		static Rooms mouseCage = new Rooms ("Mouse's Cage", "a small cage with some mice in it","tranquilizer");
+		static Rooms ratCage = new Rooms ("Rat's cage","a small cage with some large rats in it","posion");
+		static Rooms guineaPigCage = new Rooms ("Guinea Pig's cage","a cage with a large guinea pig in it","box cutter");
+		static Rooms snakeCage = new Rooms("Snake's cage","a cage with a large snake in it","key");
+		static Rooms checkoutCounter = new Rooms("Checkout Counter", "a regular old checkout counter","andres");
 		
 		static Adventurer cheeks= new Adventurer();
 	
@@ -129,6 +130,8 @@ public class AdventureModel
 							
 							map[x][y]=1;
 							map[x-1][y]=0;
+							System.out.println("you have enterned the "+roomLookup().getName());
+							System.out.println(roomLookup().getDescription());
 							return true;
 						}
 					}
@@ -147,6 +150,8 @@ public class AdventureModel
 							
 							map[x][y]=1;
 							map[x][y+1]=0;
+							System.out.println("you have enterned the "+roomLookup().getName());
+							System.out.println(roomLookup().getDescription());
 							return true;
 						}
 					}
@@ -165,6 +170,8 @@ public class AdventureModel
 							
 							map[x][y]=1;
 							map[x][y-1]=0;
+							System.out.println("you have enterned the "+roomLookup().getName());
+							System.out.println(roomLookup().getDescription());
 							return true;
 						}
 					}
@@ -183,6 +190,7 @@ public class AdventureModel
 						{
 							map[x][y]=1;
 							map[x+1][y]=0;
+							System.out.println("you have enterned the "+roomLookup().getName());
 							return true;
 						}
 					}
@@ -191,8 +199,6 @@ public class AdventureModel
 			}
 			return false;
 		}
-	
-
 	
 	public void command() //asks the player for input
 	{
@@ -206,6 +212,7 @@ public class AdventureModel
           System.out.println("what would you like to do: inspect an item, take an item, use an item , drop an item, look around,  or go in a cardinal direction"); 
 		  in = takeString();
 		  in=in.toLowerCase();
+		  in=in.trim();
 		  while(checkInput(in)==false)
 		  {
 				 System.out.println("bad input\nplease type in one of the follow \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\" ");
@@ -220,17 +227,40 @@ public class AdventureModel
 		  	case "inspect":
 		  		System.out.println("which item");
 		  		in=takeString();
-		  		itemLookup(in).inspect();
+		  		if(canAccess(in,roomLookup())==true)
+		  		{
+		  			itemLookup(in).inspect();
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot access that item");
+		  		}
 		  		break;
 		  	case "take":
 		  		System.out.println("take what");
 		  		in=takeString();
-		  		cheeks.take(itemLookup(in));
+		  		if(canAccess(in,roomLookup())==true)
+		  		{
+		  			cheeks.take(itemLookup(in));
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot access that item");
+		  		}
+		  		
 		  		break;
 		  	case "use":
 		  		System.out.println("what item");
 		  		in=takeString();
-		  		itemLookup(in).whenUsed();
+		  		if(canAccess(in,roomLookup())==true)
+		  		{
+		  			plot(itemLookup(in),roomLookup());
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot access that item");
+		  		}
+		  		
 		  		break;
 		  	case "drop":
 		  		System.out.println("drop what");
@@ -238,21 +268,49 @@ public class AdventureModel
 		  		cheeks.drop(itemLookup(in));
 		  		break;
 		  	case "go south":
-		  		movement("south");
+		  		if(canMove(roomLookup())==true)
+		  		{
+		  			movement("south");
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot leave this room yet");
+		  		}
 		  		break;
 		  	case "go north":
-		  		movement("north");
+		  		if(canMove(roomLookup())==true)
+		  		{
+		  			movement("north");
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot leave this room yet");
+		  		}
 		  		break;
 		  	case "go east":
-		  		movement("east");
+		  		if(canMove(roomLookup())==true)
+		  		{
+		  			movement("east");
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot leave this room yet");
+		  		}
+		  		
 		  		break;
 		  	case "go west":
-		  		movement("west");
+		  		if(canMove(roomLookup())==true)
+		  		{
+		  			movement("west");
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot leave this room yet");
+		  		}
 		  		break;
 		  }
 	  
 	}
-	
 	
 	static private boolean checkInput(String in)
 	{
@@ -283,11 +341,6 @@ public class AdventureModel
 	
 	}
 	
-
-	
-	
-
-	
 	static private String takeString()
 	{
 		/**
@@ -313,7 +366,31 @@ public class AdventureModel
 		
 	}
 	
+	static private void plot(Things item, Rooms place)
+	{
+		
+		if(place.getKeyItem().equals(item.getName()))
+		{
+			System.out.println(item.whenUsed());
+			System.out.println();
+			place.setIsBeat(true);
+		}
+		else
+		{
+			System.out.println("nothing interesting happens");
+			System.out.println();
+		}
+	}
 	
+	static private boolean canMove(Rooms place)
+	{
+		if(place.getIsBeat()==true)
+		{
+			return true;
+		}
+		return false;
+		
+	}
 	
 	static private Things itemLookup(String in)
 	{
@@ -327,9 +404,6 @@ public class AdventureModel
 		return null;
 		
 	}
-	
-	
-	
 	
 	static private Rooms roomLookup()
 	{
@@ -381,5 +455,25 @@ public class AdventureModel
 			}
 		}
 		return null;
+	}
+
+	static private boolean canAccess(String item, Rooms place)
+	{
+		
+		for(int x=0; x<place.getContents().size();x++)
+		{
+			if(item.equals(place.getContents().get(x).getName()))
+			{
+				return true;
+			}
+		}
+		for(int x=0; x< cheeks.getInventory().size(); x++)
+		{
+			if(item.equals(cheeks.getInventory().get(x).getName()))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }

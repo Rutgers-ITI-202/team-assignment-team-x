@@ -16,17 +16,14 @@ public class Adventurer
 	static Scanner scan = new Scanner(System.in);
 
 	
-	public void Inventory() //this prints out the content of the players inventory
+	public ArrayList<Things> getInventory() //this prints out the content of the players inventory
 	{
 		/**
 		 * @since 1.0
 		 * <h1> description </h1>
 		 * This method prints out what is in the players invetory so the user can interact wtih the items in it
 		 */
-        for(int x=0; x<inven.size();x++)
-        {
-        	System.out.println(inven.get(x).getName());
-        }
+       return inven;
         
 	}
 	public void take(Things x) //this adds an item into the inventory

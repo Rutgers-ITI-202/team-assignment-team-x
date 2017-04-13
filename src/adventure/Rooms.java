@@ -15,17 +15,35 @@ public class Rooms extends AdventureObject
 	// define room traits
 	
 	ArrayList<Things> contents = new ArrayList();
-	
-	public Rooms(String n, String d)// Constructor
+	boolean isBeat=false;
+	String keyItem="";
+	public Rooms(String n, String d, String k)// Constructor
 	{
-		name=n;
-		description=d;
+		this.name=n;
+		this.description=d;
+		this.keyItem=k;
 		
 	}
 	
 	public ArrayList<Things> getContents()
 	{
 		return this.contents;
+	}
+	public void  setIsBeat(boolean in)
+	{
+		this.isBeat=in;
+	}
+	public boolean getIsBeat()
+	{
+		return isBeat;
+	}
+	public String getKeyItem()
+	{
+		return this.keyItem;
+	}
+	public String getDescription()
+	{
+		return description;
 	}
 	
 	

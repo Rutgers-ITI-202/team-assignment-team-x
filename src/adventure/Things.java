@@ -34,13 +34,13 @@ public class Things extends AdventureObject implements usable
 	
 	public void setUsed(boolean in)
 	{
-		used=in;
+		this.used=in;
 	}
 
 	public String whenUsed() 
 	{
 		
-		return whenUsed;
+		return this.whenUsed;
 	}
 	
 	

@@ -19,7 +19,21 @@ public class TextAdventure {
 		
 		 AdventureModel runner=new AdventureModel();
 		runner.itemAdd();
-		runner.command();
+		runner.movement("start");
+		for(int x=0; x<runner.getMap().length;x++)
+		{
+			for(int y=0;y< runner.getMap()[0].length; y++)
+			{
+				System.out.print(runner.getMap()[x][y]);
+				System.out.print(" ");
+			}
+			System.out.println();
+				
+		}
+		while(true)
+		{
+			runner.command();
+		}
 	}
 	
 
