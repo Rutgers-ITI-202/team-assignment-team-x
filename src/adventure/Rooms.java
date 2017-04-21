@@ -10,13 +10,14 @@ import java.util.Scanner;
  *  <h1> Description <h1>
  *  this class creates rooms and gives them the variable name, description and an arrayList of things called contents
  */
-public class Rooms extends AdventureObject
+public class Rooms extends AdventureObject implements Inspectable
 {
 	// define room traits
 	
 	ArrayList<Things> contents = new ArrayList();
 	boolean isBeat=false;
 	String keyItem="";
+	
 	public Rooms(String n, String d, String k)// Constructor
 	{
 		this.name=n;
@@ -29,7 +30,7 @@ public class Rooms extends AdventureObject
 	{
 		return this.contents;
 	}
-	public void  setIsBeat(boolean in)
+	public void setIsBeat(boolean in)
 	{
 		this.isBeat=in;
 	}

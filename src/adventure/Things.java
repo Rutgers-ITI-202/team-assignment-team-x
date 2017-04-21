@@ -8,7 +8,7 @@ package adventure;
  *  <h1> Description <h1>
  *  This class creates things and gives them the variable description, whenUser(a description of what happened when used), and a name it also includes a boolean variable that is set to true when used so the program knows if an item is being used or not
  */
-public class Things extends AdventureObject implements usable
+public class Things extends AdventureObject implements Usable
 { 
 	// we can use these decelerations for things that may effect gameplay
 	

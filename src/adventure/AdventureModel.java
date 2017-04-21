@@ -156,6 +156,7 @@ public class AdventureModel
 						}
 					}
 				}
+				System.out.println("you cant go that way");
 				return false;
 			}
 			
@@ -209,15 +210,16 @@ public class AdventureModel
 		 * this method asks the user what they would like to do and then using a switch statement sends calls the correct method
 		 */
 		  String in="";
-          System.out.println("what would you like to do: inspect an item, take an item, use an item , drop an item, look around,  or go in a cardinal direction"); 
+          System.out.println("what would you like to do: inspect an item, take an item, use an item , drop an item, look around, interact with a character, or go in a cardinal direction"); 
 		  in = takeString();
 		  in=in.toLowerCase();
 		  in=in.trim();
 		  while(checkInput(in)==false)
 		  {
-				 System.out.println("bad input\nplease type in one of the follow \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\" ");
+				 System.out.println("bad input\nplease type in one of the follow \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\", \"interact\" ");
 				 in=takeString();
-		  }
+		  }//print inventory and items in room 
+		  
 		  
 		  switch(in)//goes through the options
 		  {
@@ -249,7 +251,7 @@ public class AdventureModel
 		  		}
 		  		
 		  		break;
-		  	case "use":
+		  	case "use" :
 		  		System.out.println("what item");
 		  		in=takeString();
 		  		if(canAccess(in,roomLookup())==true)
@@ -258,7 +260,20 @@ public class AdventureModel
 		  		}
 		  		else
 		  		{
-		  			System.out.println("you cannot access that item");
+		  			System.out.println("you cannot access that");
+		  		}
+		  		
+		  		break;
+			case  "interact":
+		  		System.out.println("what item");
+		  		in=takeString();
+		  		if(canAccess(in,roomLookup())==true)
+		  		{
+		  			plot(itemLookup(in),roomLookup());
+		  		}
+		  		else
+		  		{
+		  			System.out.println("you cannot access that");
 		  		}
 		  		
 		  		break;
@@ -366,7 +381,7 @@ public class AdventureModel
 		
 	}
 	
-	static private void plot(Things item, Rooms place)
+	static private void plot(AdventureObject item, Rooms place)
 	{
 		
 		if(place.getKeyItem().equals(item.getName()))

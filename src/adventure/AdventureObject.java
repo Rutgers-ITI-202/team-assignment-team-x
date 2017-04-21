@@ -1,6 +1,6 @@
 package adventure;
 
-public class AdventureObject implements inspectable
+public class AdventureObject implements Inspectable,Usable
 {
 	String description;
 	String name;
@@ -10,9 +10,19 @@ public class AdventureObject implements inspectable
 		
 		return description;
 	}
+	
 	public String getName()
 	{
 		return name;
 	}
+
+	
+	public String whenUsed() 
+	{
+		
+		return "";
+	}
+	
+	
 
 }
