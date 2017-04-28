@@ -25,7 +25,10 @@ public class TextAdventure {
 		
 		AdventureModel runner=new AdventureModel();
 		runner.itemAdd();
-		System.out.println("Tip: take all the objects in every room you enter you have a giant backpack and you never know when they may be useful"); //gives the player a useful tip to beat the game quicker
+		System.out.println("Hello there! Welcome to Cheeks’ Adventure! You are entering the world of the adorable little hamster named Cheeks. You will have to navigate through the pet store and find items that help you defeat the other characters. You can observe the room and the objects in it by the command ‘Look Around.’ This will describe the room and its contents. In order to interact with the objects you can use the following commands: take, use, drop, and inspect. \n");
+		System.out.println("Inspect- Describes the item or character\nTake- adds the item to your inventory\nUse- Uses an item \nDrop- Removes and item from your inventory \n");
+		System.out.println("You can move from room to room by the commands ‘go north,’ ‘go south,’ ‘go east,’ or ‘go west.’ Please note that you can only advance to a new room after defeating the character in the current room. Otherwise, you can only move back to previous rooms.");
+		System.out.println();//gives the player a useful tip to beat the game quicker
 		System.out.println("would you like to play");
 		int x=0;
 		String play= runner.takeString();
