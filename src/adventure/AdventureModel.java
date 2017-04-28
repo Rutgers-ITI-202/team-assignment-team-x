@@ -337,11 +337,11 @@ public class AdventureModel
 		  in=in.trim();
 		  while(checkInput(in)==false)
 		  {
-				 System.out.println("I'm not sure you can do that... Please try again with one of the following commands: \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\", \"interact\" ");
+				 System.out.println("I'm not sure you can do that... Please try again with one of the following commands: \"take\",\"use\",\"drop\",\"inspect\",\"go north\",\"go east\",\"go south\", \"go west\", \"look around\" ");
 				 in=takeString();
 		  }
 		  
-		  
+		  System.out.println();
 		  switch(in)//goes through the options
 		  {
 		  	case "look around":
