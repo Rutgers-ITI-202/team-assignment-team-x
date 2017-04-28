@@ -7,16 +7,10 @@ import java.util.Scanner;
  * @author Keith, Kevin, Spencer
  * @version 2.0
  * @since 1.0
-<<<<<<< HEAD
- * <h1> TextAdventure </h>
- * <p>Main game loop.</p>
- * @param      player input, ask player if they want to begin game
- * @return     run the game
-=======
  * <h1> Description </h>
  * This is the main loop for the adventure text program it describes the first room and then asks if the user would like to play and then starts the game
->>>>>>> origin/master
- *
+ * @param      player input, ask player if they want to begin game
+ * @return     run the game
  */
 public class TextAdventure {
 	
