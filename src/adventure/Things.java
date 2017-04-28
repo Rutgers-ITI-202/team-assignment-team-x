@@ -6,44 +6,43 @@ package adventure;
  * @version 1.0
  * @since 1.0
  *  <h1> Description <h1>
- *  This class creates things and gives them the variable description, whenUser(a description of what happened when used), and a name it also includes a boolean variable that is set to true when used so the program knows if an item is being used or not
+ *  <p>Initialises game objects and gives them descriptions.</p>
+ *  <p>return     name
+ *  <p>return     description</p>
+ *  <p>return     whenUser : a description of what happens when the object is interacted with</p>
+ *  <p>return     boolean : set to true when used so the player knows if the item is being used or not.</p>
  */
-public class Things extends AdventureObject implements Usable
-{ 
-	// we can use these decelerations for things that may effect gameplay
-	
-				// Defines traits of a Thing
-	 String whenUsed="";
-	
-	 boolean used=false;
-	 
-	public Things(String d, String WU, String n) // Constructor
-	{
-		
-		this.description=d;
-		this.whenUsed=WU;
-		this.name=n;
-	}
-	
-	
-	public void setDescription(String in)
-	{
-		this.description=in;
-	}
-	
-	
-	public void setUsed(boolean in)
-	{
-		this.used=in;
-	}
+public class Things extends AdventureObject implements Usable {
 
-	public String whenUsed() 
-	{
-		
-		return this.whenUsed;
-	}
-	
-	
+    // Register player interaction.
+    String whenUsed = "";
+
+    // Check to see if the object is currently being interacted with.
+    boolean used = false;
+
+    // Constructor for individual objects.
+    public Things(String d, String WU, String n) {
+
+        this.description = d;
+        this.whenUsed = WU;
+        this.name = n;
+    }
+
+    // Constructor for item description.
+    public void setDescription(String in ) {
+        this.description = in ;
+    }
+
+    // Constructor for interaction status.
+    public void setUsed(boolean in ) {
+        this.used = in ;
+    }
+
+    // Constructor for usage status.
+    public String whenUsed() {
+
+        return this.whenUsed;
+    }
 
 
 }
