@@ -6,10 +6,10 @@ import java.util.Scanner;
  * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
- * <h1> Description </h>
+ * <h1> TextAdventure </h>
  * <p>Main game loop.</p>
- * <p>param      player input, ask player if they want to begin game</p>
- * <p>return     run the game
+ * @param      player input, ask player if they want to begin game
+ * @return     run the game
  *
  */
 public class TextAdventure {

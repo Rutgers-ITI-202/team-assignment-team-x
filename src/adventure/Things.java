@@ -1,16 +1,15 @@
 package adventure;
-//make this class extend another class with a inspect or look method that returns a description
+
 /**
- * 
  * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
- *  <h1> Description <h1>
+ *  <h1> Things <h1>
  *  <p>Initialises game objects and gives them descriptions.</p>
- *  <p>return     name
- *  <p>return     description</p>
- *  <p>return     whenUser : a description of what happens when the object is interacted with</p>
- *  <p>return     boolean : set to true when used so the player knows if the item is being used or not.</p>
+ *  @return     name
+ *  @return     description
+ *  @return     whenUser : a description of what happens when the object is interacted with
+ *  @return     boolean : set to true when used so the player knows if the item is being used or not.
  */
 public class Things extends AdventureObject implements Usable {
 
