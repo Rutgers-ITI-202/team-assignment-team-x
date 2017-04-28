@@ -1,47 +1,67 @@
+
 package adventure;
 
 import java.util.Scanner;
 /**
  * 
  * @author Keith, Kevin, Spencer
- * @version 1.0
+ * @version 2.0
  * @since 1.0
+<<<<<<< HEAD
  * <h1> TextAdventure </h>
  * <p>Main game loop.</p>
  * @param      player input, ask player if they want to begin game
  * @return     run the game
+=======
+ * <h1> Description </h>
+ * This is the main loop for the adventure text program it describes the first room and then asks if the user would like to play and then starts the game
+>>>>>>> origin/master
  *
  */
 public class TextAdventure {
+	
+	public static void main(String[] args) 		//Method that runs the main game
+	{
+		/**
+		 * @since 2.0
+		 * <h1> Description </h1>
+		 * This method runs the game 
+		 */
+		
+		
+		AdventureModel runner=new AdventureModel();
+		runner.itemAdd();
+		System.out.println("Tip: take all the objects in every room you enter you have a giant backpack and you never know when they may be useful"); //gives the player a useful tip to beat the game quicker
+		System.out.println("would you like to play");
+		int x=0;
+		String play= runner.takeString();
+		
+		if(play.equalsIgnoreCase("yes"))
+		{
+			runner.movement("start");
+			while(runner.isGameOver()==false)//checks to see if the user can go to the last room
+			{
+				runner.command();
+				while(runner.isGameOver()==true && runner.isAndresBeat()==false)//runs until the game ends
+				{
+					if(x==0)
+					{
+						runner.movement("end game"); //moves the player to the last room
+						x++;
+					}
+					runner.command();	
+				}
+				System.out.println();
+				if(runner.isAndresBeat()==true)
+				{
+					break;
+				}
+		}
+		System.out.println("thanks for playing");
+		
+		
+	}
+	
 
-    public static void main(String[] args) {
-
-        // Main game loop.
-    	
-    	// Initialise new game runner.
-        AdventureModel runner = new AdventureModel();
-        
-        // Initialise new items.
-        runner.itemAdd();
-        
-        // Initialise player movement.
-        runner.movement("Start");
-        
-        // Initialise worl map.
-        for (int x = 0; x < runner.getMap().length; x++) {
-            for (int y = 0; y < runner.getMap()[0].length; y++) {
-                System.out.print(runner.getMap()[x][y]);
-                System.out.print(" ");
-            }
-            System.out.println();
-
-        }
-        
-        // Allow player to enter commands.
-        while (true) {
-            runner.command();
-        }
-    }
-
-
+}
 }

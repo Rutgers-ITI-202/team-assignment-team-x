@@ -1,5 +1,6 @@
 package adventure;
 /**
+<<<<<<< HEAD
  * @author Keith, Kevin, Spencer
  * @version 1.0
  * @since 1.0
@@ -13,6 +14,16 @@ package adventure;
 public class AdventureObject implements Inspectable, Usable {
     String description;
     String name;
+=======
+ * 
+ * @author Keith, Kevin, Spencer
+ * @version 1.0
+ * @since 2.0
+ * <h1> Description </h1>
+ * The class is the parent class of Things and Characters and holds their name and description and the getters and setters for those and a whenUsed method
+ *
+ */
+>>>>>>> origin/master
 
     // Get the name of the object upon observation.
     public String getName() {

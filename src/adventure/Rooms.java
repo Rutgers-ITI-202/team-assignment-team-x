@@ -12,6 +12,7 @@ import java.util.Scanner;
  *  @return     description
  *  @return     contents of room, stored in an ArrayList
  */
+<<<<<<< HEAD
 public class Rooms extends AdventureObject implements Inspectable {
     // Initialise new ArrayList to store the contents of the room.
     ArrayList < Things > contents = new ArrayList();
@@ -57,4 +58,61 @@ public class Rooms extends AdventureObject implements Inspectable {
     }
 
 
+=======
+public class Rooms extends AdventureObject implements Inspectable
+{
+	// define room traits
+	
+	ArrayList<Things> contents = new ArrayList();
+	Characters animal;
+	boolean isBeat=false;
+	String keyItem="";
+	String intro="";
+	
+	
+	
+
+	public Rooms(String n, String d, String i, String k, Characters c)// Constructor
+	{
+		this.name=n;
+		this.description=d;
+		this.keyItem=i;
+		this.intro=k;
+		this.animal=c;
+	}
+	public Characters getAnimal()
+	{
+		return animal;
+	}
+	public ArrayList<Things> getContents()
+	{
+		return this.contents;
+	}
+	
+	public void setIsBeat(boolean in)
+	{
+		this.isBeat=in;
+	}
+	
+	public boolean getIsBeat()
+	{
+		return isBeat;
+	}
+	
+	public String getKeyItem()
+	{
+		return this.keyItem;
+	}
+	public String getDescription()
+	{
+		return description;
+	}
+	
+	public String getIntro() {
+		return intro;
+	}
+
+	
+	
+>>>>>>> origin/master
 }
