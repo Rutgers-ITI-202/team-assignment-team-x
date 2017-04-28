@@ -1,14 +1,23 @@
 package adventure;
+/**
+ * 
+ * @author Keith, Kevin, Keith
+ * @since 2.0
+ * <h1> Description </h1>
+ * This class holds information about characters in the game and their constructor
+ *
+ */
 
 public class Characters extends AdventureObject implements Usable 
 {
 	String used;
-	String voiceLine="";
 	
-	public Characters(String u, String vc)
+	
+	public Characters(String n,String d ,String u)
 	{
 		this.used=u;
-		this.voiceLine=vc;
+		this.description=d;
+		this.name=n;
 	}
 	public String whenUsed() 
 	{
